@@ -1,3 +1,3 @@
-export { default as Landing } from "./images/Landing.png";
-export { default as Logo } from "./images/Logo.png";
-export { default as TextLogo } from "./images/TextLogo.png";
+export { default as MainImage } from "./images/mainImage.png";
+export { default as Logo } from "./images/logo.png";
+export { default as ImageLogo } from "./images/imageLogo.png";
