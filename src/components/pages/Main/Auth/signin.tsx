@@ -33,13 +33,11 @@ function SignIn({ signinModal, setSigninModal, setIsLoggedIn }: SignInProps) {
   const { mutate: signinMutate } = useMutation({
     mutationFn: PostSignInApi,
     onSuccess: (data) => {
-      alertSuccess("로그인에 성공하였습니다.");
+      // alertSuccess("로그인에 성공하였습니다.");
       setCookie("access_token", data.access_token, new Date(data.expired_at));
       localStorage.setItem("ROLE", data.role);
       setIsLoggedIn(true);
       setSigninModal(false);
-      if (data.role === "USER") nav("/");
-      else nav("/");
     },
     onError: () => {
       alertError("아이디와 비밀번호를 확인해주세요.");

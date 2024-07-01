@@ -1,3 +1,4 @@
+// style.js
 import styled from "styled-components";
 import { Color } from "./color";
 
@@ -11,7 +12,7 @@ export const Button = styled.button<{
   background-color: ${({ backColor }) =>
     backColor ? backColor : Color.primary[300]};
   padding: 12px;
-  width: ${({ width }) => (width ? width : "100%")};
+  width: ${({ width }) => (width ? width : "400px")}; /* 버튼 너비 고정 */
   border: none;
   justify-content: center;
   align-items: center;

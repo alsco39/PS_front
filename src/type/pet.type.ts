@@ -4,4 +4,5 @@ export type PetRegistrationReqType = {
   gender: string;
   tendency: string;
   age: number;
+  profile: string;
 };

@@ -21,6 +21,7 @@ function PetRegistration() {
       gender: "수컷",
       tendency: "WTIL",
       age: 0,
+      profile: "",
     });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,9 +47,10 @@ function PetRegistration() {
 
   const { uploadImage } = useImageUpload((profile: any) => {
     if (profile) {
-      const formData = new FormData();
-      formData.append("profile", profile);
-      imageSubmitMutate(formData);
+      petRegistrationMutate({
+        ...registrationValue,
+        profile: profile,
+      });
     }
   });
 
@@ -61,6 +63,7 @@ function PetRegistration() {
         gender: "수컷",
         tendency: "WTIL",
         age: 0,
+        profile: "",
       });
     },
     onError: (err) => {
@@ -99,7 +102,7 @@ function PetRegistration() {
         <div>
           <_.InputContainer>
             <Input
-              label="반려견 이름"
+              label="반려동물 이름"
               placeholder=""
               onChange={onChange}
               value={registrationValue.name}

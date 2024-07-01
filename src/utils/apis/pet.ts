@@ -7,5 +7,5 @@ const router = "/pets";
 export const PostPetRegistrationApi = async (
   userData: PetRegistrationReqType
 ) => {
-  await DefaultInstance.post(`${router}`, userData);
+  await AuthInstance.post(`${router}/create`, userData);
 };
